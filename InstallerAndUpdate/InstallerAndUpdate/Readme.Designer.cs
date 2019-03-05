@@ -38,6 +38,8 @@
             this.ReadmeTxt.Location = new System.Drawing.Point(12, 44);
             this.ReadmeTxt.Multiline = true;
             this.ReadmeTxt.Name = "ReadmeTxt";
+            this.ReadmeTxt.ReadOnly = true;
+            this.ReadmeTxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ReadmeTxt.Size = new System.Drawing.Size(554, 142);
             this.ReadmeTxt.TabIndex = 0;
             // 

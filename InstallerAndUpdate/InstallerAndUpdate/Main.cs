@@ -12,18 +12,18 @@ using Newtonsoft.Json;
 
 namespace InstallerAndUpdate
 {
-    public partial class Loader : Form
+    public partial class Main : Form
     {
         public Resultados respuesta = new Resultados();
 
-        public Loader()
+        public Main()
         {
             InitializeComponent();
         }
 
         
 
-        private void Loader_Load(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)
         {
             var url = "http://localhost/installandupdate/config.json";
             var json = "";
@@ -32,11 +32,10 @@ namespace InstallerAndUpdate
             try {
                 json = wc.DownloadString(url);
                 respuesta = JsonConvert.DeserializeObject<Resultados>(json);
-                loadertxt.Text = respuesta.configuracion.imagen;
+                loadertxt.Text = respuesta.configuracion.version;
                 Readme readme = new Readme();
                 readme.TextBoxText = respuesta.configuracion.readme;
                 readme.Show();
-                readme.Focus();
             }
             catch (Exception error)
             {

@@ -23,8 +23,8 @@ namespace InstallerAndUpdate
         }
         private void Readme_Load(object sender, EventArgs e)
         {
-            this.BringToFront();
-            this.Activate();
+
+            ReadmeTxt.Focus();
         }
     }
 }

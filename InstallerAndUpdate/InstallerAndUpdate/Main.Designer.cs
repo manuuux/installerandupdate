@@ -1,6 +1,6 @@
 ﻿namespace InstallerAndUpdate
 {
-    partial class Loader
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -61,7 +61,7 @@
             // loadertxt
             // 
             this.loadertxt.AutoSize = true;
-            this.loadertxt.Location = new System.Drawing.Point(221, 151);
+            this.loadertxt.Location = new System.Drawing.Point(222, 154);
             this.loadertxt.Name = "loadertxt";
             this.loadertxt.Size = new System.Drawing.Size(53, 13);
             this.loadertxt.TabIndex = 2;
@@ -92,7 +92,7 @@
             this.FilenameLbl.TabIndex = 5;
             this.FilenameLbl.Text = "Filename.ext";
             // 
-            // Loader
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,10 +105,10 @@
             this.Controls.Add(this.Closebutton);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Loader";
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Loader_Load);
+            this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
