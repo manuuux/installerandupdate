@@ -10,3 +10,4 @@ C:\Users\manue\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Debug\InstallerAndU
 C:\Users\manue\iau\InstallerAndUpdate\InstallerAndUpdate\bin\Debug\Newtonsoft.Json.dll
 C:\Users\manue\iau\InstallerAndUpdate\InstallerAndUpdate\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\manue\iau\InstallerAndUpdate\InstallerAndUpdate\bin\Debug\Newtonsoft.Json.xml
+C:\Users\manue\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Debug\InstallerAndUpdate.Readme.resources

@@ -14,10 +14,14 @@ namespace InstallerAndUpdate
 {
     public partial class Loader : Form
     {
+        public Resultados respuesta = new Resultados();
+
         public Loader()
         {
             InitializeComponent();
         }
+
+        
 
         private void Loader_Load(object sender, EventArgs e)
         {
@@ -27,12 +31,16 @@ namespace InstallerAndUpdate
             WebClient wc = new WebClient();
             try {
                 json = wc.DownloadString(url);
-                var respuesta = JsonConvert.DeserializeObject<Resultados>(json);
+                respuesta = JsonConvert.DeserializeObject<Resultados>(json);
                 loadertxt.Text = respuesta.configuracion.imagen;
+                Readme readme = new Readme();
+                readme.TextBoxText = respuesta.configuracion.readme;
+                readme.Show();
+                readme.Focus();
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.Message);
+                MessageBox.Show("Ocurrio un error al momento de descargar el archivo de configuracion\n" + error.Message);
                 Close();
             }
             
