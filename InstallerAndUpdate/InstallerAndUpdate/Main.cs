@@ -25,11 +25,23 @@ namespace InstallerAndUpdate
 
         private void Main_Load(object sender, EventArgs e)
         {
+            
+            
+        }
+
+        private void Closebutton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Main_Shown(object sender, EventArgs e)
+        {
             var url = "http://localhost/installandupdate/config.json";
             var json = "";
-           
+
             WebClient wc = new WebClient();
-            try {
+            try
+            {
                 json = wc.DownloadString(url);
                 respuesta = JsonConvert.DeserializeObject<Resultados>(json);
                 loadertxt.Text = respuesta.configuracion.version;
@@ -42,12 +54,6 @@ namespace InstallerAndUpdate
                 MessageBox.Show("Ocurrio un error al momento de descargar el archivo de configuracion\n" + error.Message);
                 Close();
             }
-            
-        }
-
-        private void Closebutton_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }
