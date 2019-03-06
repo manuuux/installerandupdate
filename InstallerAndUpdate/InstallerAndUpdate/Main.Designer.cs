@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.Closebutton = new System.Windows.Forms.Button();
             this.loadertxt = new System.Windows.Forms.Label();
             this.DownloadPgr = new System.Windows.Forms.ProgressBar();
             this.DownloadLbl = new System.Windows.Forms.Label();
             this.FilenameLbl = new System.Windows.Forms.Label();
+            this.TimerLoader = new System.Windows.Forms.Timer(this.components);
+            this.TimerAccept = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -92,6 +95,15 @@
             this.FilenameLbl.TabIndex = 5;
             this.FilenameLbl.Text = "Filename.ext";
             // 
+            // TimerLoader
+            // 
+            this.TimerLoader.Interval = 1000;
+            this.TimerLoader.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // TimerAccept
+            // 
+            this.TimerAccept.Tick += new System.EventHandler(this.TimerAccept_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,7 +121,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Main_Load);
-            this.Shown += new System.EventHandler(this.Main_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +134,8 @@
         private System.Windows.Forms.ProgressBar DownloadPgr;
         private System.Windows.Forms.Label DownloadLbl;
         private System.Windows.Forms.Label FilenameLbl;
+        private System.Windows.Forms.Timer TimerLoader;
+        private System.Windows.Forms.Timer TimerAccept;
     }
 }
 

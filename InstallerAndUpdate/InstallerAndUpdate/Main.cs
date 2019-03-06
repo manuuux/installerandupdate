@@ -14,7 +14,11 @@ namespace InstallerAndUpdate
 {
     public partial class Main : Form
     {
+        Readme readme = new Readme();
         public Resultados respuesta = new Resultados();
+        private string url = "http://localhost/installandupdate/config.json";
+        private string json = "";
+        private WebClient wc = new WebClient();
 
         public Main()
         {
@@ -25,34 +29,45 @@ namespace InstallerAndUpdate
 
         private void Main_Load(object sender, EventArgs e)
         {
-            
-            
+            TimerLoader.Start();
+            TimerAccept.Start();
         }
 
         private void Closebutton_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        private void Main_Shown(object sender, EventArgs e)
+        
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            var url = "http://localhost/installandupdate/config.json";
-            var json = "";
+            showreadme();
+            TimerLoader.Stop();
+        }
 
-            WebClient wc = new WebClient();
+        private void showreadme()
+        {          
             try
             {
                 json = wc.DownloadString(url);
                 respuesta = JsonConvert.DeserializeObject<Resultados>(json);
                 loadertxt.Text = respuesta.configuracion.version;
-                Readme readme = new Readme();
                 readme.TextBoxText = respuesta.configuracion.readme;
                 readme.Show();
             }
             catch (Exception error)
             {
+                TimerLoader.Stop();
                 MessageBox.Show("Ocurrio un error al momento de descargar el archivo de configuracion\n" + error.Message);
                 Close();
+            }
+        }
+
+        private void TimerAccept_Tick(object sender, EventArgs e)
+        {
+            if (readme.aceptar)
+            {
+                TimerAccept.Stop();
+                MessageBox.Show("win");
             }
         }
     }

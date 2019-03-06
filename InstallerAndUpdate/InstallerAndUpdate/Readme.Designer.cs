@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.ReadmeTxt = new System.Windows.Forms.TextBox();
-            this.ReadmeLbl = new System.Windows.Forms.Label();
             this.AcceptBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ReadmeTxt
             // 
-            this.ReadmeTxt.Location = new System.Drawing.Point(12, 44);
+            this.ReadmeTxt.Location = new System.Drawing.Point(12, 13);
             this.ReadmeTxt.Multiline = true;
             this.ReadmeTxt.Name = "ReadmeTxt";
             this.ReadmeTxt.ReadOnly = true;
@@ -43,31 +42,22 @@
             this.ReadmeTxt.Size = new System.Drawing.Size(554, 142);
             this.ReadmeTxt.TabIndex = 0;
             // 
-            // ReadmeLbl
-            // 
-            this.ReadmeLbl.AutoSize = true;
-            this.ReadmeLbl.Location = new System.Drawing.Point(9, 18);
-            this.ReadmeLbl.Name = "ReadmeLbl";
-            this.ReadmeLbl.Size = new System.Drawing.Size(39, 13);
-            this.ReadmeLbl.TabIndex = 1;
-            this.ReadmeLbl.Text = "Leeme";
-            // 
             // AcceptBtn
             // 
-            this.AcceptBtn.Location = new System.Drawing.Point(458, 201);
+            this.AcceptBtn.Location = new System.Drawing.Point(458, 166);
             this.AcceptBtn.Name = "AcceptBtn";
             this.AcceptBtn.Size = new System.Drawing.Size(108, 23);
             this.AcceptBtn.TabIndex = 2;
             this.AcceptBtn.Text = "Aceptar e Instalar";
             this.AcceptBtn.UseVisualStyleBackColor = true;
+            this.AcceptBtn.Click += new System.EventHandler(this.AcceptBtn_Click);
             // 
             // Readme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 236);
+            this.ClientSize = new System.Drawing.Size(578, 200);
             this.Controls.Add(this.AcceptBtn);
-            this.Controls.Add(this.ReadmeLbl);
             this.Controls.Add(this.ReadmeTxt);
             this.Name = "Readme";
             this.Text = "Readme";
@@ -80,7 +70,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox ReadmeTxt;
-        private System.Windows.Forms.Label ReadmeLbl;
         private System.Windows.Forms.Button AcceptBtn;
     }
 }
