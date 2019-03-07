@@ -28,15 +28,18 @@ namespace InstallerAndUpdate
             get { return aceptarvar; }
             set { aceptarvar = value; }
         }
-        private void Readme_Load(object sender, EventArgs e)
-        {
-            ReadmeTxt.Focus();
-        }
-
         private void AcceptBtn_Click(object sender, EventArgs e)
         {
             aceptar = true;
             this.Close();
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Desea cancelar la operacion", "Cancelar instalacion", MessageBoxButtons.YesNo))
+            {
+                Environment.Exit(1);
+            }
         }
     }
 }

@@ -82,18 +82,16 @@
             this.DownloadLbl.AutoSize = true;
             this.DownloadLbl.Location = new System.Drawing.Point(16, 54);
             this.DownloadLbl.Name = "DownloadLbl";
-            this.DownloadLbl.Size = new System.Drawing.Size(80, 13);
+            this.DownloadLbl.Size = new System.Drawing.Size(0, 13);
             this.DownloadLbl.TabIndex = 4;
-            this.DownloadLbl.Text = "Descargando...";
             // 
             // FilenameLbl
             // 
             this.FilenameLbl.AutoSize = true;
             this.FilenameLbl.Location = new System.Drawing.Point(16, 110);
             this.FilenameLbl.Name = "FilenameLbl";
-            this.FilenameLbl.Size = new System.Drawing.Size(66, 13);
+            this.FilenameLbl.Size = new System.Drawing.Size(0, 13);
             this.FilenameLbl.TabIndex = 5;
-            this.FilenameLbl.Text = "Filename.ext";
             // 
             // TimerLoader
             // 
