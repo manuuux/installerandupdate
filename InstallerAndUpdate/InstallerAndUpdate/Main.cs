@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace InstallerAndUpdate
 {
@@ -16,9 +17,11 @@ namespace InstallerAndUpdate
     {
         Readme readme = new Readme();
         public Resultados respuesta = new Resultados();
-        private string url = "http://localhost/installandupdate/config.json";
+        private string baseurl = "http://localhost/installandupdate/";
+        private string urlconfig = "config.json";
         private string json = "";
         private WebClient wc = new WebClient();
+        private BackgroundWorker Downloader;
 
         public Main()
         {
@@ -49,7 +52,7 @@ namespace InstallerAndUpdate
             TimerLoader.Stop();
             try
             {
-                json = wc.DownloadString(url);
+                json = wc.DownloadString(baseurl+urlconfig);
                 respuesta = JsonConvert.DeserializeObject<Resultados>(json);
                 loadertxt.Text = respuesta.configuracion.version;
                 readme.TextBoxText = respuesta.configuracion.readme;
@@ -73,9 +76,20 @@ namespace InstallerAndUpdate
             if (readme.aceptar)
             {
                 TimerAccept.Stop();
-                MessageBox.Show("win");
+                download();
+            }
+        }
+        private void download()
+        {
+            foreach (Filename file in respuesta.filename)
+            {
+                Uri URI = new Uri(baseurl + file.url, UriKind.Absolute);
+                string path = AppDomain.CurrentDomain.BaseDirectory + file.path+"\\";
+                if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
+                wc.DownloadFileAsync(URI,  path + file.archivo);
             }
         }
         
+
     }
 }
