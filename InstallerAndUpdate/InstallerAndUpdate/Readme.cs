@@ -13,6 +13,7 @@ namespace InstallerAndUpdate
     public partial class Readme : Form
     {
         private bool aceptarvar = false;
+        private BackgroundWorker downloader;
 
         public Readme()
         {

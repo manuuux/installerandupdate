@@ -45,7 +45,8 @@ namespace InstallerAndUpdate
         }
 
         private void showreadme()
-        {          
+        {
+            TimerLoader.Stop();
             try
             {
                 json = wc.DownloadString(url);
@@ -56,9 +57,14 @@ namespace InstallerAndUpdate
             }
             catch (Exception error)
             {
-                TimerLoader.Stop();
-                MessageBox.Show("Ocurrio un error al momento de descargar el archivo de configuracion\n" + error.Message);
-                Close();
+                
+                if (DialogResult.Yes == MessageBox.Show("Ocurrio un error al momento de descargar el archivo de configuracion\n" + error.Message + "\n\n Reintentar?", "Reintentar", MessageBoxButtons.YesNo))
+                {
+                    showreadme();
+                }else
+                {
+                    Close();
+                }
             }
         }
 
