@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace InstallerAndUpdate
 {
@@ -84,12 +85,32 @@ namespace InstallerAndUpdate
             foreach (Filename file in respuesta.filename)
             {
                 Uri URI = new Uri(baseurl + file.url, UriKind.Absolute);
-                string path = AppDomain.CurrentDomain.BaseDirectory + file.path+"\\";
+                string path = AppDomain.CurrentDomain.BaseDirectory + file.path + "\\";
                 if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
-                wc.DownloadFileAsync(URI,  path + file.archivo);
+                if (File.Exists(path + file.archivo))
+                {
+                    if(Checksum(path + file.archivo) != file.checksum)
+                    {
+                        File.Delete(path + file.archivo);
+                        wc.DownloadFile(URI, path + file.archivo);
+                    }
+                }else
+                {
+                    wc.DownloadFile(URI, path + file.archivo);
+                }
+                
             }
         }
-        
+        private string Checksum(string archivo)
+        {
+            HashAlgorithm aloritmo = new SHA1CryptoServiceProvider();
+            string result = string.Empty;
+            using (FileStream fs = File.OpenRead(archivo))
+            {
+                result = BitConverter.ToString(aloritmo.ComputeHash(fs)).ToLower().Replace("-", "");
+            }
+            return result;
+        }
 
     }
 }

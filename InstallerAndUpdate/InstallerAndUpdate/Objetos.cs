@@ -22,7 +22,6 @@ namespace InstallerAndUpdate
         public string checksum { get; set; }
         public string path { get; set; }
         public string url { get; set; }
-        public string version { get; set; }
     }
 
     public class Resultados
