@@ -1,0 +1,33 @@
+{
+    "configuracion": {
+      "imagen": "imagen.jpg",
+      "readme": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut finibus ante. Donec lobortis ex pellentesque, tempor lacus sit amet, scelerisque urna. Nullam ut arcu nisl. Morbi luctus lacus non tellus posuere varius. Nunc eleifend ex non quam ultricies dapibus. Praesent pharetra aliquam metus ac commodo. Pellentesque nec felis faucibus, commodo felis a, pulvinar erat.  Donec quis imperdiet orci. Morbi fermentum quam sit amet dapibus molestie. Vivamus sit amet tempus elit. Nam egestas enim nisi, in aliquet diam congue vel. Nam eros lacus, porta vitae velit quis, porta maximus ipsum. Nam volutpat odio eu varius tristique. Nullam eleifend est at sem imperdiet, efficitur laoreet tellus pharetra. Phasellus vitae metus rhoncus, aliquam dolor ut, vestibulum tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus a volutpat sapien. Praesent eget feugiat felis. Duis hendrerit eget ante non fringilla. Vivamus in venenatis eros, et gravida nisl.  Pellentesque porttitor lobortis nisl, non rutrum ipsum maximus ac. Ut placerat justo posuere tortor vehicula maximus. Phasellus volutpat felis id ipsum fringilla, ac faucibus metus convallis. Integer feugiat mattis ultrices. Donec laoreet ligula tellus, et ullamcorper orci pellentesque ac. Maecenas eleifend dui porttitor dolor sodales, et bibendum felis tempus. Nullam efficitur risus vel tellus placerat semper. Maecenas mattis, justo ac molestie pretium, lectus ante volutpat odio, in posuere ligula nibh ac ligula. Morbi non aliquet metus, at ultricies tellus. Aenean convallis metus egestas, dictum tellus quis, interdum lacus. Sed imperdiet ultricies urna a mattis. Suspendisse in aliquam arcu, ac egestas leo. Ut sit amet urna imperdiet, mattis turpis ut, congue turpis. In facilisis, lacus sit amet accumsan pretium, eros ligula convallis risus, ac eleifend ligula lacus sed leo. Praesent blandit vitae sapien a fringilla.",
+      "version": "1.0.0"
+    },
+    "filename": [
+        {
+            "archivo": "BolaRoja2.0.exe",
+            "checksum": "2c9817049f994e0888256a2fb3d4e956c2fd30a0",
+            "path": "descarga",
+            "url": "files/BolaRoja2.0.exe"
+        },
+        {
+            "archivo": "BolaRoja2.0.pck",
+            "checksum": "97a7faeb5f8d085580b717723b2b76a318522ecf",
+            "path": "descarga",
+            "url": "files/BolaRoja2.0.pck"
+        },
+        {
+            "archivo": "Readme.txt",
+            "checksum": "e7804017185aa1868caef68b9685742605fb7ef9",
+            "path": "descarga",
+            "url": "files/Readme.txt"
+        },
+        {
+            "archivo": "Licence.txt",
+            "checksum": "c1e26a22e29b1a9fc3e18d67662c0f178d104c74",
+            "path": "descarga",
+            "url": "files/Licence.txt"
+        }
+    ]
+}

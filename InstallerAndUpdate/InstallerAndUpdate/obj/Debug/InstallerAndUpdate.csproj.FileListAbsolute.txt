@@ -11,3 +11,6 @@ C:\Users\manue\iau\InstallerAndUpdate\InstallerAndUpdate\bin\Debug\Newtonsoft.Js
 C:\Users\manue\iau\InstallerAndUpdate\InstallerAndUpdate\bin\Debug\Newtonsoft.Json.xml
 C:\Users\manue\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Debug\InstallerAndUpdate.Readme.resources
 C:\Users\manue\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Debug\InstallerAndUpdate.Main.resources
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\bin\Debug\InstallerAndUpdate.exe.config
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Debug\InstallerAndUpdate.exe
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Debug\InstallerAndUpdate.pdb
