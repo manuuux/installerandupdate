@@ -6,11 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
+
+
 using System.IO;
 using System.Security.Cryptography;
+
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+
 
 namespace InstallerAndUpdate
 {
@@ -18,7 +23,7 @@ namespace InstallerAndUpdate
     {
         Readme readme = new Readme();
         public Resultados respuesta = new Resultados();
-        private string baseurl = "http://localhost/installandupdate/";
+        private string baseurl = "http://instalerandupdate.tk/";
         private string urlconfig = "config.json";
         private string json = "";
         private WebClient wc = new WebClient();
@@ -54,7 +59,11 @@ namespace InstallerAndUpdate
             try
             {
                 json = wc.DownloadString(baseurl+urlconfig);
-                respuesta = JsonConvert.DeserializeObject<Resultados>(json);
+                var ms = new MemoryStream(Encoding.Unicode.GetBytes(json));
+                DataContractJsonSerializer deserializer = new DataContractJsonSerializer(typeof(Resultados));
+                respuesta = (Resultados)deserializer.ReadObject(ms);
+
+                //respuesta = JsonConvert.DeserializeObject<Resultados>(json);
                 loadertxt.Text = respuesta.configuracion.version;
                 readme.TextBoxText = respuesta.configuracion.readme;
                 readme.Show();
@@ -82,24 +91,29 @@ namespace InstallerAndUpdate
         }
         private void download()
         {
-            foreach (Filename file in respuesta.filename)
+            if (respuesta.filename != null)
             {
-                Uri URI = new Uri(baseurl + file.url, UriKind.Absolute);
-                string path = AppDomain.CurrentDomain.BaseDirectory + file.path + "\\";
-                if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
-                if (File.Exists(path + file.archivo))
+                foreach (Filename file in respuesta.filename)
                 {
-                    if(Checksum(path + file.archivo) != file.checksum)
+                    Uri URI = new Uri(baseurl + file.url, UriKind.Absolute);
+                    string path = AppDomain.CurrentDomain.BaseDirectory + file.path + "\\";
+                    if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
+                    if (File.Exists(path + file.archivo))
                     {
-                        File.Delete(path + file.archivo);
+                        if (Checksum(path + file.archivo) != file.checksum)
+                        {
+                            File.Delete(path + file.archivo);
+                            wc.DownloadFile(URI, path + file.archivo);
+                        }
+                    }
+                    else
+                    {
                         wc.DownloadFile(URI, path + file.archivo);
                     }
-                }else
-                {
-                    wc.DownloadFile(URI, path + file.archivo);
+
                 }
-                
             }
+            MessageBox.Show("Instalado correctamente");
         }
         private string Checksum(string archivo)
         {

@@ -1,0 +1,10 @@
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\bin\Release\InstallerAndUpdate.exe.config
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\bin\Release\InstallerAndUpdate.exe
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\bin\Release\InstallerAndUpdate.pdb
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Release\InstallerAndUpdate.Main.resources
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Release\InstallerAndUpdate.Properties.Resources.resources
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Release\InstallerAndUpdate.Readme.resources
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Release\InstallerAndUpdate.csproj.GenerateResource.Cache
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Release\InstallerAndUpdate.exe
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Release\InstallerAndUpdate.pdb
+C:\PortableApps\zwamp\vdrive\web\iau\InstallerAndUpdate\InstallerAndUpdate\obj\Release\InstallerAndUpdate.csprojResolveAssemblyReference.cache
